@@ -1,1 +1,25 @@
+import pandas as pd
+import matplotlib.pyplot as plt
 
+#reading csv file
+mdf = pd.read_csv('cvalenzuela:safer-parks-accident-dataset.csv')
+mdf.info()
+
+len(mdf)
+
+mechcount = mdf['mechanical'].value_counts()
+mechcount
+
+opcount = mdf['op_error'].value_counts()
+opcount
+
+empcount = mdf['employee'].value_counts()
+empcount
+
+x = ["Mechanical Error","Operation Error","Employee Error"]
+v = [935,259,41]
+plt.bar(x,v)
+plt.xlabel("Reason of Error")
+plt.ylabel("Amount of Errors")
+plt.title("Comparing Machine, Operation, and Employee Errors From Roller Coaster Accidents")
+plt.show()
