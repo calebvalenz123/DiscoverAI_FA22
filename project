@@ -5,17 +5,25 @@ import matplotlib.pyplot as plt
 mdf = pd.read_csv('cvalenzuela:safer-parks-accident-dataset.csv')
 mdf.info()
 
+#this was able to get us the total count of rows
 len(mdf)
 
+#setting variable to mechcount and printing
+#out TRUE & FALSE values
 mechcount = mdf['mechanical'].value_counts()
 mechcount
 
+#setting variable to opcount and printing
+#out TRUE & FALSE values
 opcount = mdf['op_error'].value_counts()
 opcount
 
+#setting variable to empcount and printing
+#out TRUE & FALSE values
 empcount = mdf['employee'].value_counts()
 empcount
 
+#Creating bar chart
 x = ["Mechanical Error","Operation Error","Employee Error"]
 v = [935,259,41]
 plt.bar(x,v)
